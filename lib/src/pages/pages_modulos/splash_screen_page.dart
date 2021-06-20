@@ -13,7 +13,7 @@ class SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(const Duration(milliseconds: 4000), () {
-      //Navigator.pushNamed();
+      Navigator.pushReplacementNamed(context, 'login');
     });
   }
 
