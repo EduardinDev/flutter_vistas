@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:viaje_express_flutter/src/bloc/provider.dart';
 
 import 'package:viaje_express_flutter/src/routes/routes.dart';
 import 'package:viaje_express_flutter/src/share_prefs/preferencias_usuario.dart';
@@ -14,7 +15,8 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return Provider(
+        child: MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Login design',
       theme: ThemeData(
@@ -23,6 +25,6 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: getAplicationRoutes(),
-    );
+    ));
   }
 }

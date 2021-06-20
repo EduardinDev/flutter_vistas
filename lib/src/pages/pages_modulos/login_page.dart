@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:viaje_express_flutter/src/bloc/provider.dart';
 import 'package:viaje_express_flutter/src/utils/colors.dart';
 
 class LoginPage extends StatelessWidget {
-  
-
- @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(
       children: <Widget>[
-        
-        
         _cabecera(context),
         _loginForm(context),
       ],
@@ -18,7 +15,7 @@ class LoginPage extends StatelessWidget {
   }
 
   Widget _loginForm(BuildContext context) {
-    //final bloc = Provider.of(context);
+    final bloc = Provider.of(context);
     final size = MediaQuery.of(context).size;
 
     return SingleChildScrollView(
@@ -33,35 +30,32 @@ class LoginPage extends StatelessWidget {
             width: size.width * 0.85,
             margin: EdgeInsets.symmetric(vertical: 30.0),
             padding: EdgeInsets.symmetric(vertical: 50.0),
-           
             child: Column(
               children: <Widget>[
-                
-                
                 SizedBox(height: 100.0),
-                _crearEmail(),
+                _crearEmail(bloc),
                 SizedBox(height: 30.0),
-                _crearPassword(),
+                _crearPassword(bloc),
                 SizedBox(height: 30.0),
                 _crearBoton(),
                 SizedBox(height: 20.0),
                 TextButton(
-              onPressed: () =>
-                  Navigator.pushReplacementNamed(context, 'registro'),
-              child: Text('Crear nueva cuenta')),
+                    onPressed: () =>
+                        Navigator.pushReplacementNamed(context, 'registro'),
+                    child: Text('Crear nueva cuenta')),
               ],
             ),
           ),
-          
           SizedBox(height: 50.0)
         ],
       ),
     );
   }
 
-  Widget _crearEmail(/* LoginBloc bloc */) {
+  Widget _crearEmail(LoginBloc bloc) {
     return StreamBuilder(
-      //stream: bloc.emailStream,
+      stream: bloc
+          .emailStream, // con este stream podemos escuchar los cambios que se hacen en este widget
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         return Container(
           padding: EdgeInsets.symmetric(horizontal: 20.0),
@@ -72,17 +66,17 @@ class LoginPage extends StatelessWidget {
                 hintText: 'ejemplo@correo.com',
                 labelText: 'Correo electrónico',
                 counterText: snapshot.data,
-                errorText: snapshot.error.toString()),
-            //onChanged: bloc.changeEmail,
+                errorText: snapshot.error?.toString()),
+            onChanged: bloc.changeEmail,
           ),
         );
       },
     );
   }
 
-  Widget _crearPassword(/* LoginBloc bloc */) {
+  Widget _crearPassword(LoginBloc bloc) {
     return StreamBuilder(
-      //stream: bloc.passwordStream,
+      stream: bloc.passwordStream,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         return Container(
           padding: EdgeInsets.symmetric(horizontal: 20.0),
@@ -92,8 +86,8 @@ class LoginPage extends StatelessWidget {
                 icon: Icon(Icons.lock_outline, color: Colors.blueAccent),
                 labelText: 'Contraseña',
                 counterText: snapshot.data,
-                errorText: snapshot.error.toString()),
-            //onChanged: bloc.changePassword,
+                errorText: snapshot.error?.toString()),
+            onChanged: bloc.changePassword,
           ),
         );
       },
@@ -105,7 +99,8 @@ class LoginPage extends StatelessWidget {
       //stream: bloc.formValidStream,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         return ElevatedButton(
-          onPressed: (){},/* snapshot.hasData ? () => _login(bloc, context) : null, */
+          onPressed: () {},
+          /* snapshot.hasData ? () => _login(bloc, context) : null, */
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 80.0, vertical: 15.0),
             child: Text('Ingresar'),
@@ -130,11 +125,6 @@ class LoginPage extends StatelessWidget {
     //Navigator.pushReplacementNamed(context, 'home');
   } */
 
-  
-
-
-
-
   Widget _cabecera(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height * 0.4,
@@ -146,7 +136,7 @@ class LoginPage extends StatelessWidget {
           borderRadius: BorderRadius.only(bottomLeft: Radius.circular(100))),
       child: Column(
         children: <Widget>[
-           SizedBox(height: 75.0),
+          SizedBox(height: 75.0),
           Center(
             child: Image(
               image: AssetImage("assets/img_login/taxi_logo.png"),
@@ -155,12 +145,13 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 20.0),
-          Text('Ingreso', style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold, color: Colors.white)),
-        
+          Text('Ingreso',
+              style: TextStyle(
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white)),
         ],
       ),
     );
   }
-
-  
 }
