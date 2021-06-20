@@ -16,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Container(
         child: Column(
-          children: <Widget>[_crearFondo(context), _loginForm(context)],
+          children: <Widget>[_cabecera(context), _loginForm(context)],
         ),
       ),
     );
@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _cabecera() {
+  Widget _cabecera(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height * 0.4,
       decoration: BoxDecoration(
