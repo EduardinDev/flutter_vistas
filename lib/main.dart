@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:viaje_express_flutter/src/pages/splash_screen_page.dart';
+
+import 'package:viaje_express_flutter/src/routes/routes.dart';
 import 'package:viaje_express_flutter/src/share_prefs/preferencias_usuario.dart';
 
 void main() async {
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: SplashScreen(),
+      initialRoute: '/',
+      routes: getAplicationRoutes(),
     );
   }
 }

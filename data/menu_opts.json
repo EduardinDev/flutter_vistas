@@ -1,0 +1,27 @@
+{
+    "nombreApp" : "Viaje_Express",
+    "rutas" : [
+        {
+            "ruta" : "login",
+            "icon" : "accessibility",
+            "texto": "Login"
+        },
+        {
+            "ruta" : "registro",
+            "icon" : "accessibility",
+            "texto": "Registro"
+        },
+        {
+            "ruta" : "admin",
+            "icon" : "add_alert",
+            "texto": "Administrador"
+        },
+        {
+            "ruta" : "cliente",
+            "icon" : "accessibility",
+            "texto": "Cliente"
+        }
+        
+
+    ]
+}
