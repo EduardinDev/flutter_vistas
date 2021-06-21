@@ -23,8 +23,8 @@ class LoginPage extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          cabecera(context,'Ingreso'),
-          
+          //cabecera(context,'Ingreso'),
+          crearCabecera2(context, 'Ingreso'),
           Container(
             width: size.width * 0.85,
             margin: EdgeInsets.symmetric(vertical: 30.0),

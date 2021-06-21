@@ -26,8 +26,8 @@ Widget _registroForm(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          cabecera(context,'Ingreso'),
-          
+          //cabecera(context,'Registro'),
+          crearCabecera2(context, 'Registro'),
           Container(
             width: size.width * 0.85,
             margin: EdgeInsets.symmetric(vertical: 30.0),
@@ -35,17 +35,28 @@ Widget _registroForm(BuildContext context) {
             child: Column(
               children: <Widget>[
                 SizedBox(height: 10.0),
+                crearInput_Cedula(),
                 SizedBox(height: 30.0),
-                crearEmail(bloc),
+                crearInput_nombres(),
                 SizedBox(height: 30.0),
-                crearPassword(bloc),
+                crearInput_apellidos(),
+                SizedBox(height: 30.0),
+                crearInput_Telefono(),
+                SizedBox(height: 30.0),
+                crearInput_Direccion(),
+                SizedBox(height: 30.0),
+                crearDropdown_Genero(),
+                SizedBox(height: 30.0),
+                crearEmail2(),
+                SizedBox(height: 30.0),
+                crearPassword2(),
                 SizedBox(height: 30.0),
                 crearBoton(bloc,'login','Registrar'),
                 SizedBox(height: 10.0),
                 TextButton(
                     onPressed: () =>
-                        Navigator.pushReplacementNamed(context, 'registro'),
-                    child: Text('Crear nueva cuenta')),
+                        Navigator.pushReplacementNamed(context, 'login'),
+                    child: Text('Ingresar a mi cuenta')),
               ],
             ),
           ),

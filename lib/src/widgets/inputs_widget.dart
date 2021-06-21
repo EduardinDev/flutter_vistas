@@ -74,7 +74,36 @@ _login(LoginBloc bloc, BuildContext context, ruta) async {
   Navigator.pushReplacementNamed(context, ruta);
 }
 
-Widget _crearInput_Cedula() {
+  Widget crearPassword2() {
+    return TextField(
+      obscureText: true,
+      decoration: InputDecoration(
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
+          hintText: 'Password',
+          labelText: 'Password',
+          
+          icon: Icon(Icons.lock)),
+    );
+  }
+
+
+  Widget crearEmail2() {
+    return TextField(
+      keyboardType: TextInputType.emailAddress,
+      decoration: InputDecoration(
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
+          hintText: 'Email',
+          labelText: 'Email',
+         
+          icon: Icon(Icons.email)),
+      onChanged: (valor) {
+      },
+    );
+  }
+
+
+
+Widget crearInput_Cedula() {
   return TextField(
     keyboardType: TextInputType.number,
     inputFormatters: <TextInputFormatter>[
@@ -91,7 +120,7 @@ Widget _crearInput_Cedula() {
 }
 
 
-Widget _crearInput_Telefono() {
+Widget crearInput_Telefono() {
   return TextField(
     keyboardType: TextInputType.number,
     inputFormatters: <TextInputFormatter>[
@@ -107,21 +136,21 @@ Widget _crearInput_Telefono() {
   );
 }
 
-Widget _crearInput_Direccion() {
+Widget crearInput_Direccion() {
   return TextField(
     textCapitalization: TextCapitalization.sentences,
     decoration: InputDecoration(
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
         hintText: 'Dirección donde reside',
         labelText: 'Dirección',
-        suffixIcon: Icon(Icons.accessibility),
-        icon: Icon(Icons.account_circle)),
+        
+        icon: Icon(Icons.location_city_outlined)),
     onChanged: (value) {},
   );
 }
 
 
-Widget _crearInput_nombres() {
+Widget crearInput_nombres() {
   return TextField(
     textCapitalization: TextCapitalization.sentences,
     decoration: InputDecoration(
@@ -134,7 +163,7 @@ Widget _crearInput_nombres() {
   );
 }
 
-Widget _crearInput_apellidos() {
+Widget crearInput_apellidos() {
   return TextField(
     textCapitalization: TextCapitalization.sentences,
     decoration: InputDecoration(
@@ -147,7 +176,7 @@ Widget _crearInput_apellidos() {
   );
 }
 
-Widget _crearInput_fecha(
+Widget crearInput_fecha(
     BuildContext context, TextEditingController inputFieldDataController) {
   return TextField(
     enableInteractiveSelection: false,
@@ -180,9 +209,9 @@ Widget _crearInput_fecha(
     }
   } */
 
-String _opcionSeleccionada = 'volar';
+String _opcionSeleccionada = 'masculino';
 
-Widget _crearDropdown() {
+Widget crearDropdown_Genero() {
   return Row(
     children: <Widget>[
       Icon(Icons.select_all),
