@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:viaje_express_flutter/src/bloc/bloc_administrador/admin_bloc.dart';
 
 import 'login_bloc.dart';
 export 'login_bloc.dart';
 
 class Provider extends InheritedWidget {
   final loginBloc = new LoginBloc();
+  final cooperativasBloc = new CooperativasBloc();
 
   /* static Provider _instancia;
 
@@ -19,9 +21,7 @@ class Provider extends InheritedWidget {
   Provider._internal({Key? key, required Widget child})
       : super(key: key, child: child); */
 
-  Provider({ Key? key, required Widget child })
-    : super(key: key, child: child );
-
+  Provider({Key? key, required Widget child}) : super(key: key, child: child);
 
 // las siguientes dos lineas dicen: ¿al actualizarse debe notificar a sus hijos? respuesta: si
   @override
@@ -29,7 +29,11 @@ class Provider extends InheritedWidget {
 
   static LoginBloc of(BuildContext context) {
     // busca en el arbol de widgets un provider y este lo trate como un provider para extraer de ese provider el loginbloc
-    
     return context.dependOnInheritedWidgetOfExactType<Provider>()!.loginBloc;
+  }
+
+  static CooperativasBloc coopBloc(BuildContext context) {
+    // busca en el arbol de widgets un provider y este lo trate como un provider para extraer de ese provider el loginbloc
+    return context.dependOnInheritedWidgetOfExactType<Provider>()!.cooperativasBloc;
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viaje_express_flutter/src/widgets/list_rutas_widget.dart';
+import 'package:viaje_express_flutter/src/utils/list_rutas.dart';
 import 'package:viaje_express_flutter/src/widgets/menu_widget.dart';
 
 class AdminPage extends StatelessWidget {
@@ -13,7 +13,7 @@ class AdminPage extends StatelessWidget {
         title: Text('Administrador'),
       ),
       body: Center(
-        child: Text('Admin Page'),
+        child: Text('BIENVENIDO ADMINISTRADOR'),
       ),
 
     );
