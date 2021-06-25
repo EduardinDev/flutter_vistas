@@ -40,7 +40,7 @@ Widget crearCabecera2(BuildContext context, texto) {
     width: double.infinity,
     decoration: BoxDecoration(
         gradient: LinearGradient(
-            colors: [orangeColor, orangeLightColors],
+            colors: [yellowLightColors, yellowLightColors],
             end: Alignment.bottomCenter,
             begin: Alignment.topCenter),
             borderRadius: BorderRadius.only(bottomLeft: Radius.circular(100))),
@@ -48,7 +48,7 @@ Widget crearCabecera2(BuildContext context, texto) {
 
   final circulo = Center(
     child: Image(
-      image: AssetImage("assets/img_login/taxi_logo.png"),
+      image: AssetImage("assets/img_login/taxi_logo3.png"),
       width: size.width*0.4,
       fit: BoxFit.contain,
     ),
