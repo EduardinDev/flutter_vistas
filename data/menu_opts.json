@@ -20,6 +20,27 @@
             "ruta" : "cliente",
             "icon" : "accessibility",
             "texto": "Cliente"
+        },
+
+        {
+            "ruta" : "cooperativas",
+            "icon" : "accessibility",
+            "texto": "Cooperativas"
+        },
+        {
+            "ruta" : "mapaCooperativas",
+            "icon" : "accessibility",
+            "texto": "Mapas de c.ooperativas"
+        },
+        {
+            "ruta" : "adminsCooperativas",
+            "icon" : "accessibility",
+            "texto": "Administradores de cooperativas"
+        },
+        {
+            "ruta" : "perfil",
+            "icon" : "accessibility",
+            "texto": "Perfil"
         }
         
 

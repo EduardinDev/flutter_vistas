@@ -44,7 +44,7 @@ class _SettingsPageState extends State<SettingsPage> {
           title: Text('Preferencias de usuario'),
           backgroundColor: (prefs.colorSecundario) ? Colors.teal : Colors.blue,
         ),
-        drawer: MenuWidget(),
+        //drawer: MenuWidget(),
         body: ListView(children: <Widget>[
           Container(
             padding: EdgeInsets.all(5.0),
