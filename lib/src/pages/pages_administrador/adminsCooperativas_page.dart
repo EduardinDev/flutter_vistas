@@ -66,7 +66,7 @@ class _AdminsCooperativasPageState extends State<AdminsCooperativasPage> {
                 onTap: () => Navigator.pushReplacementNamed(
                   context,
                   'admin', /* arguments: data */
-                ).then((value) => setState(() {})),
+                )/* .then((value) => setState(() {})), */
               )
             ],
           ),
@@ -76,8 +76,8 @@ class _AdminsCooperativasPageState extends State<AdminsCooperativasPage> {
   _crearBoton(BuildContext context) {
     return FloatingActionButton(
       child: Icon(Icons.add),
-      onPressed: () => Navigator.pushReplacementNamed(context, 'admin')
-          .then((value) => setState(() {})),
+      onPressed: () => Navigator.pushReplacementNamed(context, 'admin'),
+          /* .then((value) => setState(() {})), */
       backgroundColor: yellowLightColors,
     );
   }
