@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:viaje_express_flutter/src/bloc/bloc_administrador/admin_bloc.dart';
 import 'package:viaje_express_flutter/src/bloc/provider.dart';
+import 'package:viaje_express_flutter/src/utils/colors.dart';
 import 'package:viaje_express_flutter/src/utils/list_rutas.dart';
 import 'package:viaje_express_flutter/src/widgets/menu_widget.dart';
 
@@ -14,7 +15,7 @@ class _CooperativasPageState extends State<CooperativasPage> {
   final rutas = new Rutas();
   @override
   Widget build(BuildContext context) {
-    final cooperativasBloc = Provider.coopBloc(context);
+    final cooperativasBloc = Provider.adminBloc(context);
     cooperativasBloc.cargarCooperativas();
     return Scaffold(
       appBar: AppBar(
@@ -28,7 +29,7 @@ class _CooperativasPageState extends State<CooperativasPage> {
     );
   }
 
-  Widget _crearListado(CooperativasBloc cooperativasBloc) {
+  Widget _crearListado(AdministradorBloc cooperativasBloc) {
     return StreamBuilder(
       stream: cooperativasBloc.cooperativasStream,
       builder: (BuildContext context,
@@ -46,7 +47,7 @@ class _CooperativasPageState extends State<CooperativasPage> {
     );
   }
 
-  Widget _crearItem(BuildContext context, CooperativasBloc cooperativasBloc,
+  Widget _crearItem(BuildContext context, AdministradorBloc cooperativasBloc,
       Map<String, dynamic> data) {
     return Dismissible(
         key: UniqueKey(),
@@ -75,9 +76,9 @@ class _CooperativasPageState extends State<CooperativasPage> {
   _crearBoton(BuildContext context) {
     return FloatingActionButton(
       child: Icon(Icons.add),
-      onPressed: () => Navigator.pushNamed(context, 'producto')
+      onPressed: () => Navigator.pushNamed(context, 'admin')
           .then((value) => setState(() {})),
-      backgroundColor: Colors.deepPurple,
+      backgroundColor: yellowLightColors,
     );
   }
 }

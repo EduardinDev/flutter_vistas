@@ -6,7 +6,7 @@ export 'login_bloc.dart';
 
 class Provider extends InheritedWidget {
   final loginBloc = new LoginBloc();
-  final cooperativasBloc = new CooperativasBloc();
+  final administradorBloc = new AdministradorBloc();
 
   /* static Provider _instancia;
 
@@ -32,8 +32,9 @@ class Provider extends InheritedWidget {
     return context.dependOnInheritedWidgetOfExactType<Provider>()!.loginBloc;
   }
 
-  static CooperativasBloc coopBloc(BuildContext context) {
-    // busca en el arbol de widgets un provider y este lo trate como un provider para extraer de ese provider el loginbloc
-    return context.dependOnInheritedWidgetOfExactType<Provider>()!.cooperativasBloc;
+  static AdministradorBloc adminBloc(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType<Provider>()!.administradorBloc;
   }
+
+  
 }
