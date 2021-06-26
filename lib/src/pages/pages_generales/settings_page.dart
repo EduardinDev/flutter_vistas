@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:viaje_express_flutter/src/share_prefs/preferencias_usuario.dart';
-import 'package:viaje_express_flutter/src/widgets/menu_widget.dart';
+
 
 class SettingsPage extends StatefulWidget {
   static final String routeName = 'settings';

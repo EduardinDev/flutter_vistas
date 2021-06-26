@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:viaje_express_flutter/src/bloc/provider.dart';
 import 'package:viaje_express_flutter/src/widgets/cabecera_widget.dart';
+import 'package:viaje_express_flutter/src/widgets/input_fecha.dart';
 import 'package:viaje_express_flutter/src/widgets/inputs_widget.dart';
 
 
@@ -22,6 +23,7 @@ class RegistroPage extends StatelessWidget {
 Widget _registroForm(BuildContext context) {
     final bloc = Provider.of(context);
     final size = MediaQuery.of(context).size;
+      
 
     return SingleChildScrollView(
       child: Column(
@@ -40,6 +42,8 @@ Widget _registroForm(BuildContext context) {
                 crearInput_nombres(),
                 SizedBox(height: 30.0),
                 crearInput_apellidos(),
+                SizedBox(height: 30.0),
+                InputFecha(),
                 SizedBox(height: 30.0),
                 crearInput_Telefono(),
                 SizedBox(height: 30.0),

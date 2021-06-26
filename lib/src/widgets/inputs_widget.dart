@@ -176,38 +176,7 @@ Widget crearInput_apellidos() {
   );
 }
 
-Widget crearInput_fecha(
-    BuildContext context, TextEditingController inputFieldDataController) {
-  return TextField(
-    enableInteractiveSelection: false,
-    controller: inputFieldDataController,
-    decoration: InputDecoration(
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
-        hintText: 'Fecha de nacimiento',
-        labelText: 'Fecha de nacimiento',
-        
-        icon: Icon(Icons.calendar_today)),
-    onTap: () {
-      FocusScope.of(context).requestFocus(new FocusNode());
-      //_selectDate(context);
-    },
-  );
-}
 
-/* void _selectDate(BuildContext context) async {
-    DateTime picked = await showDatePicker(
-        context: context,
-        initialDate: new DateTime.now(),
-        firstDate: new DateTime(2020),
-        lastDate: new DateTime(2025));
-
-    if (picked != null) {
-      setState(() {
-        _fecha = picked.toString();
-        _inputFieldDataController.text = _fecha;
-      });
-    }
-  } */
 
 String _opcionSeleccionada = 'masculino';
 
