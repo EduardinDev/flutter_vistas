@@ -20,8 +20,10 @@ class _AdminsCooperativasPageState extends State<AdminsCooperativasPage> {
     return Scaffold(
       drawer: MenuWidget(rutas: rutas.administrador),
       appBar: AppBar(
+        backgroundColor: yellowLightColors,
         title: Text('Administradores de cooperativas'),
       ),
+      
       body: _crearListado(adminBloc),
       floatingActionButton: _crearBoton(context),
     );

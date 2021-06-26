@@ -19,6 +19,7 @@ class _CooperativasPageState extends State<CooperativasPage> {
     cooperativasBloc.cargarCooperativas();
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: yellowLightColors,
         title: Text('Modulo Cooperativas'),
       ),
       drawer: MenuWidget(
