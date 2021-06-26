@@ -5,11 +5,13 @@ import 'package:viaje_express_flutter/src/utils/list_rutas.dart';
 import 'package:viaje_express_flutter/src/widgets/menu_widget.dart';
 
 class CooperativasPage extends StatefulWidget {
+  
   @override
   _CooperativasPageState createState() => _CooperativasPageState();
 }
 
 class _CooperativasPageState extends State<CooperativasPage> {
+  final rutas = new Rutas();
   @override
   Widget build(BuildContext context) {
     final cooperativasBloc = Provider.coopBloc(context);
@@ -19,7 +21,7 @@ class _CooperativasPageState extends State<CooperativasPage> {
         title: Text('Modulo Cooperativas'),
       ),
       drawer: MenuWidget(
-        rutas: rutasAdmin,
+        rutas: rutas.administrador,
       ),
       body: _crearListado(cooperativasBloc),
       floatingActionButton: _crearBoton(context),

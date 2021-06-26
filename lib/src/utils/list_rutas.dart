@@ -1,8 +1,11 @@
-import 'package:flutter/material.dart';
 
-List<String> rutasAdmin = [
-  'cooperativas',
-  'mapaCooperativas',
-  'adminsCooperativas',
-  'perfil'
-];
+
+class Rutas {
+  List<String> administrador = [
+    'admin',
+    'cooperativas',
+    'mapaCooperativas',
+    'adminsCooperativas',
+    'perfil'
+  ];
+}

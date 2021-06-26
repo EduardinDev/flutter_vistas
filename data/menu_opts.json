@@ -14,7 +14,7 @@
         {
             "ruta" : "admin",
             "icon" : "add_alert",
-            "texto": "Administrador"
+            "texto": "Inicio"
         },
         {
             "ruta" : "cliente",
