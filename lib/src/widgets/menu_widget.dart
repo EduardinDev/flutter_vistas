@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:viaje_express_flutter/src/providers/menu_provider.dart';
 
-//Widget menu centralizado 
+//Widget menu centralizado
 //enlista las rutas a las que tienen acceso los usuarios
 
 class MenuWidget extends StatelessWidget {
@@ -24,7 +24,6 @@ class MenuWidget extends StatelessWidget {
     );
   }
 
-
 // Trae el mapa de las rutas del munuProvider
   Widget _lista() {
     return FutureBuilder(
@@ -35,13 +34,11 @@ class MenuWidget extends StatelessWidget {
     );
   }
 
-
   //Lista las rutas de los modulos
   List<Widget> _listaitems(BuildContext context, List<dynamic>? data) {
-    
     final List<Widget> opciones = [];
     int cont = 0;
-    
+
     data?.forEach((opt) {
       if (rutas[cont] == opt['ruta']) {
         final temWidget = ListTile(
@@ -55,6 +52,14 @@ class MenuWidget extends StatelessWidget {
         cont++;
       }
     });
+    final logOut = ListTile(
+        leading: Icon(Icons.settings, color: Colors.blue),
+        title: Text('Salir'),
+        onTap: () {
+          Navigator.popAndPushNamed(context, 'login');
+        });
+    opciones.add(logOut);
+
     return opciones;
   }
 }
