@@ -63,9 +63,9 @@ class _AdminsCooperativasPageState extends State<AdminsCooperativasPage> {
               ListTile(
                 title: Text('${data['id']} - ${data['cedula']}'),
                 subtitle: Text('${data['nombre']} - ${data['apellido']}'),
-                onTap: () => Navigator.pushReplacementNamed(
+                onTap: () => Navigator.pushNamed(
                   context,
-                  'admin', /* arguments: data */
+                  'crudAdminsCoop', /* arguments: data */
                 )/* .then((value) => setState(() {})), */
               )
             ],
@@ -76,7 +76,7 @@ class _AdminsCooperativasPageState extends State<AdminsCooperativasPage> {
   _crearBoton(BuildContext context) {
     return FloatingActionButton(
       child: Icon(Icons.add),
-      onPressed: () => Navigator.pushReplacementNamed(context, 'admin'),
+      onPressed: () => Navigator.pushNamed(context, 'crudAdminsCoop'),
           /* .then((value) => setState(() {})), */
       backgroundColor: yellowLightColors,
     );

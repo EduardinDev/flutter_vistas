@@ -38,6 +38,11 @@
             "texto": "Administradores de cooperativas"
         },
         {
+            "ruta" : "crudAdminsCoop",
+            "icon" : "accessibility",
+            "texto": "Administrador de cooperativa"
+        },
+        {
             "ruta" : "perfil",
             "icon" : "accessibility",
             "texto": "Perfil"
