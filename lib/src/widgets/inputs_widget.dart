@@ -71,13 +71,10 @@ _login(LoginBloc bloc, BuildContext context) async {
 
   if (info == 'admin') {
     Navigator.pushReplacementNamed(context, info);
-    bloc.changeEmail('');
   } else if (info == 'adminCoop') {
     Navigator.pushReplacementNamed(context, info);
-    bloc.changeEmail('');
   } else {
     Navigator.pushReplacementNamed(context, 'login');
-    bloc.changeEmail('');
     mostrarAlerta(context, 'usuario incorrecto');
     
   }
