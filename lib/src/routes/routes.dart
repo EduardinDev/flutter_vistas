@@ -4,6 +4,7 @@ import 'package:viaje_express_flutter/src/pages/pages_administrador/adminsCooper
 import 'package:viaje_express_flutter/src/pages/pages_administrador/cooperativas_page.dart';
 import 'package:viaje_express_flutter/src/pages/pages_administrador/crudAdminsCoop_page.dart';
 import 'package:viaje_express_flutter/src/pages/pages_administrador/crudCooperativas_page.dart';
+import 'package:viaje_express_flutter/src/pages/pages_administrador/mapasCooperativas_page.dart';
 import 'package:viaje_express_flutter/src/pages/pages_generales/login_page.dart';
 import 'package:viaje_express_flutter/src/pages/pages_generales/perfil_page.dart';
 import 'package:viaje_express_flutter/src/pages/pages_generales/registro_page.dart';
@@ -22,6 +23,7 @@ Map<String, WidgetBuilder> getAplicationRoutes(){
         'perfil'                    : ( BuildContext context ) => PerfilPage(),
         'crudAdminsCoop'            : ( BuildContext context ) => CrudAdminsCoop(),
         'crudCooperativas'          : ( BuildContext context ) => CrudCooperativas(),
+        'mapaCooperativas'          : ( BuildContext context ) => MapasCooperativas(),
         
         
       };

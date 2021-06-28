@@ -48,6 +48,11 @@
             "texto": "Cooperativas"
         },
         {
+            "ruta" : "mapaCooperativas",
+            "icon" : "accessibility",
+            "texto": "Ubicación de las cooperativas"
+        },
+        {
             "ruta" : "perfil",
             "icon" : "accessibility",
             "texto": "Perfil"
