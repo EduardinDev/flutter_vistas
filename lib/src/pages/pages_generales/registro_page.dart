@@ -55,7 +55,7 @@ Widget _registroForm(BuildContext context) {
                 SizedBox(height: 30.0),
                 crearPassword2(),
                 SizedBox(height: 30.0),
-                crearBoton(bloc,'login','Registrar'),
+                crearBoton(bloc,'Registrar'),
                 SizedBox(height: 10.0),
                 TextButton(
                     onPressed: () =>

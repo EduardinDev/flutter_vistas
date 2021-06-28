@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:viaje_express_flutter/src/bloc/provider.dart';
+import 'package:viaje_express_flutter/src/providers/usuario_provider.dart';
+import 'package:viaje_express_flutter/src/utils/utils.dart';
 
 Widget crearEmail(LoginBloc bloc) {
   return StreamBuilder(
@@ -44,12 +46,12 @@ Widget crearPassword(LoginBloc bloc) {
   );
 }
 
-Widget crearBoton(LoginBloc bloc, ruta, texto) {
+Widget crearBoton(LoginBloc bloc, texto) {
   return StreamBuilder(
     stream: bloc.formValidStream,
     builder: (BuildContext context, AsyncSnapshot snapshot) {
       return ElevatedButton(
-        onPressed: snapshot.hasData ? () => _login(bloc, context,ruta) : null,
+        onPressed: snapshot.hasData ? () => _login(bloc, context) : null,
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 80.0, vertical: 15.0),
           child: Text(texto),
@@ -63,45 +65,46 @@ Widget crearBoton(LoginBloc bloc, ruta, texto) {
   );
 }
 
-_login(LoginBloc bloc, BuildContext context, ruta) async {
-  /* Map info = await usuarioProvider.login(bloc.email, bloc.password);
+_login(LoginBloc bloc, BuildContext context) async {
+  final usuarioProvider = new UsuarioProvider();
+  String info = usuarioProvider.login(bloc.email, bloc.password);
 
-    if (info['ok']) {
-      Navigator.pushReplacementNamed(context, 'home');
-    } else {
-      mostrarAlerta(context, info['mensaje']);
-    } */
-  Navigator.pushReplacementNamed(context, ruta);
+  if (info == 'admin') {
+    Navigator.pushReplacementNamed(context, info);
+    bloc.changeEmail('');
+  } else if (info == 'adminCoop') {
+    Navigator.pushReplacementNamed(context, info);
+    bloc.changeEmail('');
+  } else {
+    Navigator.pushReplacementNamed(context, 'login');
+    bloc.changeEmail('');
+    mostrarAlerta(context, 'usuario incorrecto');
+    
+  }
 }
 
-  Widget crearPassword2() {
-    return TextField(
-      obscureText: true,
-      decoration: InputDecoration(
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
-          hintText: 'Password',
-          labelText: 'Password',
-          
-          icon: Icon(Icons.lock)),
-    );
-  }
+Widget crearPassword2() {
+  return TextField(
+    obscureText: true,
+    decoration: InputDecoration(
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
+        hintText: 'Password',
+        labelText: 'Password',
+        icon: Icon(Icons.lock)),
+  );
+}
 
-
-  Widget crearEmail2() {
-    return TextField(
-      keyboardType: TextInputType.emailAddress,
-      decoration: InputDecoration(
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
-          hintText: 'Email',
-          labelText: 'Email',
-         
-          icon: Icon(Icons.email)),
-      onChanged: (valor) {
-      },
-    );
-  }
-
-
+Widget crearEmail2() {
+  return TextField(
+    keyboardType: TextInputType.emailAddress,
+    decoration: InputDecoration(
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
+        hintText: 'Email',
+        labelText: 'Email',
+        icon: Icon(Icons.email)),
+    onChanged: (valor) {},
+  );
+}
 
 Widget crearInput_Cedula() {
   return TextField(
@@ -113,12 +116,10 @@ Widget crearInput_Cedula() {
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
         hintText: 'Número de cédula',
         labelText: 'Cédula',
-        
         icon: Icon(Icons.account_circle)),
     onChanged: (value) {},
   );
 }
-
 
 Widget crearInput_Telefono() {
   return TextField(
@@ -130,7 +131,6 @@ Widget crearInput_Telefono() {
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
         hintText: 'Número de teléfono',
         labelText: 'Teléfono',
-        
         icon: Icon(Icons.phone)),
     onChanged: (value) {},
   );
@@ -143,12 +143,10 @@ Widget crearInput_Direccion() {
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
         hintText: 'Dirección donde reside',
         labelText: 'Dirección',
-        
         icon: Icon(Icons.location_city_outlined)),
     onChanged: (value) {},
   );
 }
-
 
 Widget crearInput_nombres() {
   return TextField(
@@ -157,7 +155,6 @@ Widget crearInput_nombres() {
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
         hintText: 'Nombres completos',
         labelText: 'Nombres',
-       
         icon: Icon(Icons.account_circle)),
     onChanged: (value) {},
   );
@@ -170,13 +167,10 @@ Widget crearInput_apellidos() {
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
         hintText: 'Apellidos completos',
         labelText: 'Apellidos',
-     
         icon: Icon(Icons.account_circle)),
     onChanged: (value) {},
   );
 }
-
-
 
 String _opcionSeleccionada = 'masculino';
 
@@ -197,7 +191,7 @@ Widget crearDropdown_Genero() {
   );
 }
 
-List<String> _generos = ['masculino','femenino','otro'];
+List<String> _generos = ['masculino', 'femenino', 'otro'];
 
 List<DropdownMenuItem<String>> getOpcionesDropdown() {
   List<DropdownMenuItem<String>> lista = [];

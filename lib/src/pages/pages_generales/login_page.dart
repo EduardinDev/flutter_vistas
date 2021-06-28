@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:viaje_express_flutter/src/bloc/provider.dart';
+import 'package:viaje_express_flutter/src/providers/usuario_provider.dart';
 import 'package:viaje_express_flutter/src/widgets/cabecera_widget.dart';
 import 'package:viaje_express_flutter/src/widgets/inputs_widget.dart';
 
@@ -36,7 +37,7 @@ class LoginPage extends StatelessWidget {
                 SizedBox(height: 30.0),
                 crearPassword(bloc),
                 SizedBox(height: 30.0),
-                crearBoton(bloc,'admin','Ingresar'),
+                crearBoton(bloc,'Ingresar'),
                 SizedBox(height: 10.0),
                 TextButton(
                     onPressed: () =>

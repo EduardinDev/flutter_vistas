@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: 'adminCoop',
+      initialRoute: 'login',
       routes: getAplicationRoutes(),
     ));
   }
