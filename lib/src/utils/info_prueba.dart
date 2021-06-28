@@ -36,4 +36,24 @@ Map<String, dynamic> _adminsCooperativas = {
     return lista;
   }
 
+
+
+  //INFORMACIÓN DE PRUEBA PARA EL MÓDULO: OPERADORES (operadores_page)
+  Map<String, dynamic> _operadores = {
+    'id': 47,
+    'cedula'     : '1002003000',
+    'nombre'     : 'Miguel',
+    'apellido'   : 'Andrade',
+    'correo'     : 'miguel@gmail.com',
+    'estado'     : 'Activo', 
+  };
+
+  List<Map<String, dynamic>> cargarOperadores() {
+    List<Map<String, dynamic>> lista = [];
+    for (var i = 0; i < 10; i++) {
+      lista.add(_operadores);
+    }
+    return lista;
+  }
+
 }
