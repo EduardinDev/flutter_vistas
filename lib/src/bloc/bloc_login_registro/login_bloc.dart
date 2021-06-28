@@ -2,7 +2,7 @@ import 'dart:async';
 
 
 import 'package:rxdart/rxdart.dart';
-import 'package:viaje_express_flutter/src/bloc/validators.dart';
+import 'package:viaje_express_flutter/src/bloc/bloc_login_registro/validators.dart';
 
 class LoginBloc with Validators {
   late final _emailController = BehaviorSubject<String>();

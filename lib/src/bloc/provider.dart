@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:viaje_express_flutter/src/bloc/bloc_administrador/admin_bloc.dart';
 
-import 'login_bloc.dart';
-export 'login_bloc.dart';
+import 'bloc_login_registro/login_bloc.dart';
+export 'bloc_login_registro/login_bloc.dart';
 
 class Provider extends InheritedWidget {
   final loginBloc = new LoginBloc();
