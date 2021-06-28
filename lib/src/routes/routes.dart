@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:viaje_express_flutter/src/pages/pages_adminCooperativa/adminCoopInicio_page.dart';
+import 'package:viaje_express_flutter/src/pages/pages_adminCooperativa/operadores_page.dart';
 import 'package:viaje_express_flutter/src/pages/pages_administrador/adminInicio_page.dart';
 import 'package:viaje_express_flutter/src/pages/pages_administrador/adminsCooperativas_page.dart';
 import 'package:viaje_express_flutter/src/pages/pages_administrador/cooperativas_page.dart';
@@ -24,6 +26,8 @@ Map<String, WidgetBuilder> getAplicationRoutes(){
         'crudAdminsCoop'            : ( BuildContext context ) => CrudAdminsCoop(),
         'crudCooperativas'          : ( BuildContext context ) => CrudCooperativas(),
         'mapaCooperativas'          : ( BuildContext context ) => MapasCooperativas(),
+        'adminCoop'                 : ( BuildContext context ) => AdministradorCooperativa(),
+        'operadores'                : ( BuildContext context ) => Operadores(),
         
         
       };

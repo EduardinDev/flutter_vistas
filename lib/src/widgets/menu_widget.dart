@@ -38,14 +38,15 @@ class MenuWidget extends StatelessWidget {
   List<Widget> _listaitems(BuildContext context, List<dynamic>? data) {
     final List<Widget> opciones = [];
     int cont = 0;
-
+    String perfil = rutas[rutas.length - 1];
     data?.forEach((opt) {
       if (rutas[cont] == opt['ruta']) {
         final temWidget = ListTile(
             leading: Icon(Icons.settings, color: Colors.blue),
             title: Text(opt['texto']),
             onTap: () {
-              Navigator.pushReplacementNamed(context, opt['ruta']);
+              Navigator.pushReplacementNamed(context, opt['ruta'],
+                  arguments: perfil);
             });
 
         opciones..add(temWidget)..add(Divider());

@@ -6,12 +6,14 @@ class Rutas {
     'cooperativas',
     'mapaCooperativas',
     'adminsCooperativas',
-    'perfil'
+    'perfil',
+    'A'
   ];
 
   List<String> adminCooperativa = [
     'adminCoop',
     'operadores',
-    'perfil'
+    'perfil',
+    'AC'
   ];
 }

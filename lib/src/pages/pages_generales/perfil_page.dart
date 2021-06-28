@@ -20,6 +20,7 @@ class _PerfilPageState extends State<PerfilPage> {
   @override
   void initState() {
     // initState es parte del ciclo de vida del statefulwidget - se inicializa al ejecutar el widget
+
     super.initState();
     _genero = prefs.genero;
     _textController = new TextEditingController(text: prefs.nombreUsuario);
@@ -32,11 +33,20 @@ class _PerfilPageState extends State<PerfilPage> {
     });
   }
 
+  List<String> rutasPerfil(seleccion) {
+    if (seleccion == 'A') {
+      return rutas.administrador;
+    } else {
+      return rutas.adminCooperativa;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    final Object? parametro = ModalRoute.of(context)!.settings.arguments;
     return Scaffold(
       drawer: MenuWidget(
-        rutas: rutas.administrador,
+        rutas: rutasPerfil(parametro),
       ),
       appBar: AppBar(
         backgroundColor: yellowLightColors,
@@ -80,12 +90,10 @@ class _PerfilPageState extends State<PerfilPage> {
                   prefs.nombreUsuario = value;
                 },
               )),
-
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 20.0),
-                child: _fecha,
-              ),    
-
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            child: _fecha,
+          ),
           Container(
               padding: EdgeInsets.symmetric(horizontal: 20.0),
               child: TextField(

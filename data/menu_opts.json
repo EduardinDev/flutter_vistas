@@ -53,11 +53,6 @@
             "texto": "Ubicación de las cooperativas"
         },
         {
-            "ruta" : "perfil",
-            "icon" : "accessibility",
-            "texto": "Perfil"
-        },
-        {
             "ruta" : "adminCoop",
             "icon" : "accessibility",
             "texto": "Administrador de Cooperativa"
@@ -66,6 +61,11 @@
             "ruta" : "operadores",
             "icon" : "accessibility",
             "texto": "Operadores"
+        },
+        {
+            "ruta" : "perfil",
+            "icon" : "accessibility",
+            "texto": "Perfil"
         }
         
 
