@@ -8,4 +8,10 @@ class Rutas {
     'adminsCooperativas',
     'perfil'
   ];
+
+  List<String> adminCooperativa = [
+    'adminCoop',
+    'operadores',
+    'perfil'
+  ];
 }

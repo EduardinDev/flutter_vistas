@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viaje_express_flutter/src/pages/pages_administrador/admin_page.dart';
+import 'package:viaje_express_flutter/src/pages/pages_administrador/adminInicio_page.dart';
 import 'package:viaje_express_flutter/src/pages/pages_administrador/adminsCooperativas_page.dart';
 import 'package:viaje_express_flutter/src/pages/pages_administrador/cooperativas_page.dart';
 import 'package:viaje_express_flutter/src/pages/pages_administrador/crudAdminsCoop_page.dart';
