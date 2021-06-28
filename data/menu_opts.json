@@ -63,6 +63,11 @@
             "texto": "Operadores"
         },
         {
+            "ruta" : "crudOperador",
+            "icon" : "accessibility",
+            "texto": "Operadores"
+        },
+        {
             "ruta" : "perfil",
             "icon" : "accessibility",
             "texto": "Perfil"
