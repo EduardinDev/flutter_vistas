@@ -44,7 +44,7 @@ Map<String, dynamic> _adminsCooperativas = {
     'cedula'     : '1002003000',
     'nombre'     : 'Miguel',
     'apellido'   : 'Andrade',
-    'correo'     : 'miguel@gmail.com',
+    'correo'     : 'operador@gmail.com',
     'estado'     : 'Activo', 
   };
 
