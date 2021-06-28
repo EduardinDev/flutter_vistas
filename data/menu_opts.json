@@ -43,6 +43,11 @@
             "texto": "Administrador de cooperativa"
         },
         {
+            "ruta" : "crudCooperativas",
+            "icon" : "accessibility",
+            "texto": "Cooperativas"
+        },
+        {
             "ruta" : "perfil",
             "icon" : "accessibility",
             "texto": "Perfil"

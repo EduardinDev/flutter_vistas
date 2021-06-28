@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:viaje_express_flutter/src/utils/colors.dart';
-import 'package:viaje_express_flutter/src/widgets/crud_widget.dart';
+import 'package:viaje_express_flutter/src/widgets/crudAdminCoop_widget.dart';
 
 class CrudAdminsCoop extends StatefulWidget {
   CrudAdminsCoop({Key? key}) : super(key: key);

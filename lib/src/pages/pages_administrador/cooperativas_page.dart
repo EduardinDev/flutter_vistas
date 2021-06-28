@@ -64,9 +64,9 @@ class _CooperativasPageState extends State<CooperativasPage> {
               ListTile(
                 title: Text('${data['id']} - ${data['nombre']}'),
                 subtitle: Text('${data['telefono']} - ${data['direccion']}'),
-                onTap: () => Navigator.pushReplacementNamed(
+                onTap: () => Navigator.pushNamed(
                   context,
-                  'admin', /* arguments: data */
+                  'crudCooperativas', /* arguments: data */
                 )/* .then((value) => setState(() {})) */,
               )
             ],
@@ -77,7 +77,7 @@ class _CooperativasPageState extends State<CooperativasPage> {
   _crearBoton(BuildContext context) {
     return FloatingActionButton(
       child: Icon(Icons.add),
-      onPressed: () => Navigator.pushNamed(context, 'admin'),
+      onPressed: () => Navigator.pushNamed(context, 'crudCooperativas'),
           /* .then((value) => setState(() {})), */
       backgroundColor: yellowLightColors,
     );
