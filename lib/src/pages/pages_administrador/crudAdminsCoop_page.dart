@@ -10,7 +10,7 @@ class CrudAdminsCoop extends StatefulWidget {
 }
 
 class _CrudAdminsCoopState extends State<CrudAdminsCoop> {
-  List<String> inputString = ['Nombre','Apellido','Dirección'];
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +18,12 @@ class _CrudAdminsCoopState extends State<CrudAdminsCoop> {
         backgroundColor: yellowLightColors,
         title: Text('Administrador de cooperativa'),
       ),
-      body: CrudWidget(inputString: inputString),
+      body: CrudWidget(),
     );
   }
+
+
+ 
+
+
 }
