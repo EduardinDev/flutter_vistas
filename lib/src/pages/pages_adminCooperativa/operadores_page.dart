@@ -14,6 +14,8 @@ class Operadores extends StatefulWidget {
 
 class _OperadoresState extends State<Operadores> {
   final rutas = new Rutas();
+  final Map crear = {'tipo':'crear', 'texto': 'Añadir nuevo operador'};
+  final Map editar = {'tipo':'editar', 'texto': 'Editar información del operador'};
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class _OperadoresState extends State<Operadores> {
       ),
       appBar: AppBar(
         backgroundColor: yellowLightColors,
-        title: Text('Administrador de cooperativa'),
+        title: Text('Operadores'),
       ),
       body: _crearListado(adminCoopBloc),
       floatingActionButton: _crearBoton(context),
@@ -71,7 +73,7 @@ class _OperadoresState extends State<Operadores> {
                 subtitle: Text('${data['nombre']} - ${data['apellido']}'),
                 onTap: () => Navigator.pushNamed(
                   context,
-                  'crudOperador', /* arguments: data */
+                  'crudOperador', arguments: editar, /* arguments: data */
                 )/* .then((value) => setState(() {})), */
               )
             ],
@@ -85,7 +87,7 @@ class _OperadoresState extends State<Operadores> {
   _crearBoton(BuildContext context) {
     return FloatingActionButton(
       child: Icon(Icons.add),
-      onPressed: () => Navigator.pushNamed(context, 'crudOperador'),
+      onPressed: () => Navigator.pushNamed(context, 'crudOperador', arguments: crear),
           /* .then((value) => setState(() {})), */
       backgroundColor: yellowLightColors,
     );
