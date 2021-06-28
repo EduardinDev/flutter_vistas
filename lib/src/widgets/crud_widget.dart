@@ -41,6 +41,7 @@ class _CrudWidgetState extends State<CrudWidget> {
                 SizedBox(height: 20.0,),
                 _crearPassword(),
                 SizedBox(height: 20.0,),
+                _crearBoton()
               ],
             ),
           )),
@@ -153,6 +154,19 @@ class _CrudWidgetState extends State<CrudWidget> {
       keyboardType: TextInputType.visiblePassword,
       obscureText: true,
       decoration: InputDecoration(labelText: 'Password'),
+    );
+  }
+
+  Widget _crearBoton() {
+    return ElevatedButton.icon(
+      onPressed: (){},
+      icon: Icon(Icons.save),
+      label: Text('Guardar'),
+      style: ElevatedButton.styleFrom(
+          primary: Colors.amber[600],
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          textStyle: TextStyle(color: Colors.white, fontSize: 30.0)),
     );
   }
 }
